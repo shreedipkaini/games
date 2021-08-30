@@ -1,0 +1,22 @@
+canvas {
+  position: relative;
+
+  border: 1px solid seagreen;
+}
+
+#startScreen {
+  position: absolute;
+  top:0;
+  left: 0;
+
+  background-color: white;
+}
+
+#resetButton {
+  cursor: pointer;
+  transform: scale(1.5);
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 48%;
+}
