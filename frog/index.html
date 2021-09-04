@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Frog Jumper</title>
+        <link rel="shortcut icon" type="image/png" href="https://cdn.pixabay.com/photo/2019/03/11/15/07/frog-4048728_960_720.png" />
+        <link rel="stylesheet" type="text/css" href="./assets/stylesheets/reset.css" />
+        <script type="text/javascript" src="./dist/bundle.js"></script>
+        <audio src="./audio/bounce_1.mp3" id="bounce-mp3"></audio>
+        <audio src="./audio/impact_1.mp3" id="impact-mp3"></audio>
+        <audio src="./audio/coin.mp3" id="coin-mp3"></audio>
+    </head>
+    <body>
+        <div id="info" class="hidden">
+            <div id="close-how-to">[close]</div>
+            <p class="how-to-play-info">Press <strong>Space</strong> to jump.</p>
+            <p>Avoid the mushrooms by jumping over them.</p>
+            <img src="./assets/images/mushroom.png" width="50px" height="50px" />
+            <div class="how-to-play-info">You can eat the <span color="yellow">yellow</span> beans to raise your score!</div>
+        </div>
+        <div class="nav">
+            <div id="game-title">Frog Jumper</div>
+            <div id="score-box">Score:<span id="score">0</span></div>
+            <div id="how-to">How to play?</div>
+            <div class="row">
+                <a class="icon-container github" href="https://github.com/shmily40686">
+                    <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" width="40px" height="40px">
+                </a>
+                <a class="icon-container" href="https://www.linkedin.com/in/lingxiaowen/">
+                    <img src="https://image.flaticon.com/icons/png/512/174/174857.png" width="40px" height="40px" >
+                </a>
+            </div>
+        </div>
+        <div class="main-div">
+            <main>
+                <div id="menu" data-check="on">
+                   <button id="start-game">Start Game</button> 
+                </div>
+                <div id="menu-info">
+                    <div id="words">Press <strong>SPACE</strong> to start the game</div>
+                </div>
+                <canvas id="background-canvas" height="600" width="800" z-index:2></canvas>
+                <canvas id="game-canvas" height="600" width="800" z-index:1></canvas>
+                <canvas id="foreground-canvas" height="600" width="800"></canvas>
+                <div id="cover-die" >
+                    <button id="cover-die-button">Restart</button>
+                </div>
+            </main>
+        </div>
+        <div class="footer">
+            <div>Created by Xiaowen Ling</div>
+            <div>©Frog Jumper, 2020</div>
+        </div>
+    </body>
+    <script>
+
+        const buttonStart = document.getElementById("start-game")
+        const menu = document.getElementById("menu")
+
+        function startGame () {
+            window.hideHowTo();
+            menu.style[" -webkit-animation"] = "fadeOut 1s"
+            menu.style["animation"] = "fadeOut 1s"
+            menu.style["animation-fill-mode"] = "forwards"
+            menu.dataset.check = "off"
+        }
+        buttonStart.addEventListener("click", startGame)
+
+
+    </script>
+</html>
